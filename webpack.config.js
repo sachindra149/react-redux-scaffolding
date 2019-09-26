@@ -4,6 +4,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CleanWebpackPlugin   = require('clean-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
 
+
 module.exports = {
     entry: './src/index.jsx',
     output: {
@@ -12,6 +13,10 @@ module.exports = {
     },
     module: {
         rules: [
+            {
+                test: /\.json$/,
+                loader: 'json-loader'
+            },
             {
                 test: /\.js|\.jsx$/,
                 exclude: /(node_modules)/,
