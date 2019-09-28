@@ -26,8 +26,14 @@ describe("<App />", () => {
 	it("Testing Shallow and Mount Rendering", () => {
 		const shallowWrapper = shallow(<App />);
 		const mountWrapper = mount(<App />);
-		console.log("shallowWrapper: ", shallowWrapper.debug());
-		console.log("mountWrapper: ", mountWrapper.debug());
+		expect(shallowWrapper.containsMatchingElement(<h1>React Redux Testing App</h1>)).toEqual(true);
+		expect(mountWrapper.containsMatchingElement(<h1>React Redux Testing App</h1>)).toEqual(true);
+	});
+
+	it("Should render a loader initially", () => {
+		const wrapper = shallow(<App />);
+		expect(wrapper.find('table').length).toEqual(0);
+		expect(wrapper.find('.loading').length).toEqual(1);
 	});
 
 });

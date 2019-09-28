@@ -35,7 +35,7 @@ class App extends Component {
 					{
 						this.state.dataResults && this.state.dataResults.length > 0 ? (
 							this.state.dataResults.map((item, index) =>
-								<ListBlock dataResults={item} testKey={index} />
+								<ListBlock dataResults={item} key={index} />
 							)
 						) : (<div className="loading"><div className="lds-dual-ring"></div></div>)
 					}

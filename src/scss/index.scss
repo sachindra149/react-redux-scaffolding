@@ -17,12 +17,16 @@ body {
 	#react-app {
 		width: 1200px;
 		margin: 0 auto;
+		max-width: 95%;
 	}
 	table {
 		margin-bottom: 20px;
 		width: 48%;
 		float: left;
 		margin: 0px 1% 20px 1%;
+		@media only screen and (max-width: 1200px) {
+			width: 100%;
+		}
 		tr {
 			td {
 				text-align: left;
